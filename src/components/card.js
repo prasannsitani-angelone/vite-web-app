@@ -1,10 +1,3 @@
-import "./App.css"
-import { For } from "solid-js"
-
-// TODO: Imports needs to be fixed.
-// import { Video } from "@components";
-// import { Card } from "./components/card"
-
 const Card = (props) => {
   return (
     <div class='flex flex-col space-y-4'>
@@ -38,22 +31,4 @@ const Card = (props) => {
   )
 }
 
-function App() {
-  return (
-    <div class='flex flex-col space-y-4'>
-      <ul>
-        <For each={new Array(200).fill(0)}>
-          {(name) => {
-            return (
-              <li>
-                <Card />
-              </li>
-            )
-          }}
-        </For>
-      </ul>
-    </div>
-  )
-}
-
-export default App
+export default Card
