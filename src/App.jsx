@@ -1,5 +1,5 @@
 import "./App.css"
-import { For } from "solid-js"
+import { For, createEffect, createResource, createSignal } from "solid-js"
 
 // TODO: Imports needs to be fixed.
 // import { Video } from "@components";
@@ -38,7 +38,21 @@ const Card = (props) => {
   )
 }
 
+const fetchUser = async (id) =>
+  (await fetch("https://jsonplaceholder.typicode.com/todos/2")).json()
+
 function App() {
+  const [apiResponse] = createResource(fetchUser)
+
+  const [apiResponseData, setApiResponseData] = createSignal(null)
+
+  createEffect(() => {
+    if (!apiResponseData.loading && !apiResponseData.error && apiResponse())
+      setApiResponseData(apiResponse().data)
+
+    console.log("apiResponseData : ", apiResponse())
+  })
+
   return (
     <div class='flex flex-col space-y-4'>
       <ul>
