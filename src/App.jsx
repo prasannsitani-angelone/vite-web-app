@@ -8,8 +8,6 @@ import { createEffect, createSignal, For } from "solid-js";
 //   socketConnectionObject,
 //   handlePostMessage,
 // } from "../worker/worker-api";
-// import "/node_modules/video-react/dist/video-react.css";
-// import { Player } from "video-react";
 
 const Video = (props) => {
   return (
@@ -61,14 +59,6 @@ const Card = (props) => {
 };
 
 function App() {
-  const [size, setSize] = createSignal(200);
-
-  // const data = new Array(10000).fill().map((value, index) => ({
-  //   id: index,
-  //   // title: faker.lorem.words(5),
-  //   // body: faker.lorem.sentences(4),
-  // }));
-
   return (
     <div class="flex flex-col space-y-4">
       <ul>
@@ -76,27 +66,13 @@ function App() {
           {(name) => {
             return (
               <li>
-                {/* <Card /> */}
-                <Video />
+                <Card />
+                {/* <Video /> */}
               </li>
             );
           }}
         </For>
       </ul>
-      {/* {data.map((item) => (
-        <div key={item.id} className="post">
-          <h3>
-            {item.title} - {item.id}
-          </h3>
-          <p>{item.body}</p>
-        </div>
-      ))} */}
-      {/* {new Array(200).fill().forEach((item) => (
-        <Card />
-      ))} */}
-      {/* {[1, 2, 3, 4].forEach((item) => (
-        <Card />
-      ))} */}
     </div>
   );
 }
