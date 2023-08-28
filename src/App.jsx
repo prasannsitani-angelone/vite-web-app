@@ -12,14 +12,15 @@ import { Video, Card } from "@components"
 
 const fetchUser = async (id) => {
   try {
-    return await (
-      await fetch("https://jsonplaceholder.typicode.com/todosss/2")
-    ).json()
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos/2")
+    return response.json()
   } catch (error) {}
 }
 
 function App() {
   const [apiResponse] = createResource(fetchUser)
+
+  console.log("apiResponse() : ", apiResponse)
 
   const [apiResponseData, setApiResponseData] = createSignal(undefined)
   const [apiError, setApiError] = createSignal(false)
@@ -42,7 +43,7 @@ function App() {
               {(name) => {
                 return (
                   <li>
-                    <Video />
+                    {/* <Video /> */}
                     <Card />
                   </li>
                 )
