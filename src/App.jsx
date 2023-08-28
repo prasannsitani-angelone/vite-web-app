@@ -12,7 +12,8 @@ import { Video, Card } from "@components"
 
 const fetchUser = async (id) => {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos/2")
+    const response = await fetch("http://localhost:3001/")
+    // const response = await fetch("https://jsonplaceholder.typicode.com/todos")
     return response.json()
   } catch (error) {}
 }
@@ -20,16 +21,11 @@ const fetchUser = async (id) => {
 function App() {
   const [apiResponse] = createResource(fetchUser)
 
-  console.log("apiResponse() : ", apiResponse)
-
   const [apiResponseData, setApiResponseData] = createSignal(undefined)
   const [apiError, setApiError] = createSignal(false)
 
   createEffect(() => {
-    console.log("loading : ", apiResponse.loading)
-    console.log("error : ", apiResponse?.error)
     if (!apiResponse.loading && !apiResponse.error && apiResponse()) {
-      console.log("apiResponse : ", apiResponse())
       setApiResponseData(apiResponse())
     }
   })
@@ -39,17 +35,17 @@ function App() {
       <Show when={apiResponseData()}>
         <div class='flex flex-col space-y-4'>
           <ul>
-            <For each={new Array(200).fill(0)}>
+            <For each={apiResponseData()}>
               {(name) => {
                 return (
                   <li>
-                    {/* <Video /> */}
-                    <Card />
+                    <Card title={name.title} />
                   </li>
                 )
               }}
             </For>
           </ul>
+          <p></p>
         </div>
       </Show>
     </ErrorBoundary>
