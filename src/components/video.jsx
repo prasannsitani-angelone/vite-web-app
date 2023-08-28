@@ -11,7 +11,7 @@ const Video = (props) => {
       />
       Your browser does not support HTML video.
     </video>
-  );
-};
+  )
+}
 
-export default Video;
+export default Video
