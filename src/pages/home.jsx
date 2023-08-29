@@ -15,19 +15,12 @@ const Home = (props) => {
 
   return (
     <Show when={apiResponseData()}>
-      <div class='flex flex-col space-y-4'>
-        <ul>
-          <For each={apiResponseData()}>
-            {(name) => {
-              return (
-                <li>
-                  <Card title={name.title} />
-                </li>
-              )
-            }}
-          </For>
-        </ul>
-        <p></p>
+      <div class='grid lg:grid-cols-4 md:grid-cols-2 gap-10 my-4'>
+        <For each={apiResponseData()}>
+          {(name) => {
+            return <Card id={name.id} title={name.title} />
+          }}
+        </For>
       </div>
     </Show>
   )

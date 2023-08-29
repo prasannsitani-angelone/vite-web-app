@@ -5,6 +5,25 @@
   text-align: center;
 }
 
+/* @media screen and (min-width: 1025px) and (max-width: 1279px){
+  div{
+      min-width: 1024px;
+      max-width: none;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1599px){
+  div{
+      max-width: 1270px;
+  }
+}
+
+@media screen and (min-width: 1600px){
+  div{
+      max-width: 1600px
+  }
+} */
+
 .logo {
   height: 6em;
   padding: 1.5em;

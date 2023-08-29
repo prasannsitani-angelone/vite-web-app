@@ -5,3 +5,14 @@ export const fetchData = async () => {
     return response.json()
   } catch (error) {}
 }
+
+export const fetchProduct = async (id) => {
+  try {
+    const product = await fetch(
+      `https://jsonplaceholder.typicode.com/todos/${id}`
+    )
+    return product.json()
+  } catch (err) {
+    console.error(err)
+  }
+}
