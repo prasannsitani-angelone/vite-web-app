@@ -16,8 +16,6 @@ const Product = (props) => {
       (p) => p.id.toString() === product().id.toString()
     )
 
-    console.log("isExists : ", isExists)
-
     if (isExists) {
       setItems(
         (p) => p.id.toString() === product().id.toString(),
