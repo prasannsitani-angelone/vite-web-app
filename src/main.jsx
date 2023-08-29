@@ -4,11 +4,14 @@ import "./index.css"
 import { render } from "solid-js/web"
 import "@solid-devtools/debugger/setup"
 import { Router } from "@solidjs/router"
+import { CartContextProvider } from "@context/cart-context.jsx"
 
 render(
   () => (
     <Router>
-      <App />
+      <CartContextProvider>
+        <App />
+      </CartContextProvider>
     </Router>
   ),
   document.getElementById("root")

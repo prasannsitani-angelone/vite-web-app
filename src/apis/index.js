@@ -8,9 +8,7 @@ export const fetchData = async () => {
 
 export const fetchProduct = async (id) => {
   try {
-    const product = await fetch(
-      `https://jsonplaceholder.typicode.com/todos/${id}`
-    )
+    const product = await fetch(`http://localhost:3001/${id}`)
     return product.json()
   } catch (err) {
     console.error(err)
