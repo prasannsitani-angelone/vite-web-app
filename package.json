@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@solid-devtools/debugger": "^0.22.4",
-    "@solidjs/router": "^0.8.2",
+    "@solidjs/router": "^0.8.3",
     "add": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
