@@ -4,6 +4,10 @@ import { ErrorBoundary } from "solid-js"
 import { A, Route, Routes } from "@solidjs/router"
 import { Home, Cart, Product } from "@pages"
 import { useCartContext } from "@context/cart-context"
+import BottomTab from "./pages/bottom-tab"
+import MainApp from "./pages/main-app"
+import { NavBar } from "./components"
+import Drawer from "./components/drawer"
 
 function App() {
   const { items } = useCartContext()
@@ -14,16 +18,27 @@ function App() {
 
   return (
     <ErrorBoundary fallback={<p>Something went wrong :-/</p>}>
-      <header class='space-x-4'>
-        <h1>Nav Bar</h1>
-        <A href='/'>Home</A>
-        <A href='/cart'>Cart ({quantity})</A>
-      </header>
-      <Routes>
-        <Route path='/' component={Home} />
-        <Route path='/cart' component={Cart} />
-        <Route path='/products/:id' component={Product} />
-      </Routes>
+      <div className='drawer'>
+        <input id='app-drawer' type='checkbox' className='drawer-toggle' />
+        <div className='drawer-content'>
+          <NavBar />
+          <Routes>
+            <Route path='/' component={MainApp} />
+          </Routes>
+        </div>
+        <div className='drawer-side'>
+          <label htmlFor='app-drawer' className='drawer-overlay'></label>
+          <ul className='menu p-4 w-80 min-h-full bg-base-200 text-base-content'>
+            {/* Sidebar content here */}
+            <li>
+              <a>Sidebar Item 1</a>
+            </li>
+            <li>
+              <a>Sidebar Item 2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </ErrorBoundary>
   )
 }
