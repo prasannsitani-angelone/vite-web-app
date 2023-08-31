@@ -34,14 +34,14 @@ const MainApp = (props) => {
   }
 
   return (
-    <div className='flex'>
+    <>
       {renderScreen(tabs[currentTab()].id)}
       <BottomTab
         tabs={tabs}
         currentTab={() => currentTab()}
         setCurrentTab={setCurrentTab}
       />
-    </div>
+    </>
   )
 }
 

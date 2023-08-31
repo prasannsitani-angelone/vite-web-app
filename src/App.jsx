@@ -2,20 +2,10 @@ import "./App.css"
 import { ErrorBoundary } from "solid-js"
 
 import { A, Route, Routes } from "@solidjs/router"
-import { Home, Cart, Product } from "@pages"
-import { useCartContext } from "@context/cart-context"
-import BottomTab from "./pages/bottom-tab"
 import MainApp from "./pages/main-app"
 import { NavBar } from "./components"
-import Drawer from "./components/drawer"
 
 function App() {
-  const { items } = useCartContext()
-
-  const quantity = () => {
-    return items.reduce((acc, cur) => acc + cur.quantity, 0)
-  }
-
   return (
     <ErrorBoundary fallback={<p>Something went wrong :-/</p>}>
       <div className='drawer'>
