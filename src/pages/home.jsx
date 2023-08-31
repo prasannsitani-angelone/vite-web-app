@@ -15,7 +15,7 @@ const Home = (props) => {
 
   return (
     <Show when={apiResponseData()}>
-      <div class='grid lg:grid-cols-4 md:grid-cols-2 gap-10 my-4 px-4'>
+      <div class='grid lg:grid-cols-4 md:grid-cols-2 gap-10 my-4 px-4 h-screen w-screen'>
         <For each={apiResponseData()}>
           {(name) => {
             return <Card id={name.id} title={name.title} />

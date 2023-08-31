@@ -1,8 +1,9 @@
-import { For, createSignal } from "solid-js"
+import { createSignal } from "solid-js"
 import Home from "./home"
 import BottomTab from "./bottom-tab"
 import Cart from "./cart"
 import Product from "./product"
+import Reels from "./reels"
 
 const MainApp = (props) => {
   const [currentTab, setCurrentTab] = createSignal(0)
@@ -19,6 +20,10 @@ const MainApp = (props) => {
     {
       id: "stats",
       title: "Stats"
+    },
+    {
+      id: "reels",
+      title: "Reels"
     }
   ]
 
@@ -30,6 +35,8 @@ const MainApp = (props) => {
         return <Cart />
       case "stats":
         return <Product />
+      case "reels":
+        return <Reels />
     }
   }
 
