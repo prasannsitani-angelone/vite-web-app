@@ -4,8 +4,12 @@ import { ErrorBoundary } from "solid-js"
 import { A, Route, Routes } from "@solidjs/router"
 import MainApp from "./pages/main-app"
 import { NavBar } from "./components"
+import { getToastState, hideToast } from "./store/toast"
+import { CrossIcon, HeartIcon } from "./assets"
 
 function App() {
+  const toast = getToastState()
+
   return (
     <ErrorBoundary fallback={<p>Something went wrong :-/</p>}>
       <div className='drawer'>
@@ -29,6 +33,14 @@ function App() {
           </ul>
         </div>
       </div>
+      {toast.visible && (
+        <div class='flex p-2 items-center justify-between w-screen fixed bottom-4 bg-blue-500 bg-opacity-80 text-white text-left rounded-lg shadow-lg'>
+          <span>{toast.message}</span>
+          <div className='flex justify-end' onClick={() => hideToast()}>
+            <CrossIcon />
+          </div>
+        </div>
+      )}
     </ErrorBoundary>
   )
 }

@@ -1,6 +1,15 @@
+import { createSignal } from "solid-js"
 import { GiftIcon } from "../../assets"
+import { showToast } from "../../store/toast"
 
 const ProfileSection = (props) => {
+  const [isFollwer, toggleFollower] = createSignal(false)
+
+  const handleFollow = () => {
+    showToast(isFollwer() ? `Following` : `Follow`)
+    toggleFollower((prev) => !prev)
+  }
+
   return (
     <div className='flex flex-col px-2 justify-end'>
       <div className='flex bg-gray-800 w-fit py-1 px-2 mb-3 items-center gap-1 rounded-full'>
@@ -20,7 +29,12 @@ const ProfileSection = (props) => {
           <div>
             <text className='text-xs text-white font-bold'>artbytraveler</text>
           </div>
-          <button className='btn-outline text-xs text-white'>Follow</button>
+          <button
+            className='btn btn-outline btn-sm text-xs text-white lowercase focus:outline-none'
+            onClick={handleFollow}
+          >
+            {isFollwer() ? `Following` : `Follow`}
+          </button>
         </div>
 
         <div className='flex w-fit'>
