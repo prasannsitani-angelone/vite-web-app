@@ -1,1 +1,5 @@
 export { default as CameraIcon } from "./camera-icon"
+export { default as HeartIcon } from "./heart-icon"
+export { default as CommentIcon } from "./comment-icon"
+export { default as ShareIcon } from "./share-icon"
+export { default as MenuIcon } from "./menu-icon"
