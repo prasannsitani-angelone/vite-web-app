@@ -1,7 +1,7 @@
 const CameraIcon = (props) => {
   return (
     <svg
-      class='h-5 w-5 text-white'
+      class='h-8 w-8 text-white'
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'

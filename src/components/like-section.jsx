@@ -6,15 +6,15 @@ const LikeSection = (props) => {
     <div className='flex flex-col items-center gap-3 '>
       <div className='flex flex-col items-center w-12 gap-2'>
         <HeartIcon />
-        <text className='text-xs font-bold'>23.7K</text>
+        <text className='text-xs text-white font-semibold'>23.7K</text>
       </div>
       <div className='flex flex-col items-center w-12 gap-2'>
         <CommentIcon />
-        <text className='text-xs font-bold'>47</text>
+        <text className='text-xs text-white font-semibold'>47</text>
       </div>
       <div className='flex flex-col  items-center w-12 gap-2'>
         <ShareIcon />
-        <text className='text-xs font-bold'>15.2K</text>
+        <text className='text-xs text-white font-semibold'>15.2K</text>
       </div>
       <div className='flex flex-col items-center w-12'>
         <MenuIcon />
