@@ -1,10 +1,10 @@
 const HeartIcon = (props) => {
   return (
     <svg
-      class='h-5 w-5 text-white'
+      class='h-5 w-5'
       viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
+      fill={props.isSelected ? "red" : "none"}
+      stroke={!props.isSelected ? "white" : "none"}
       stroke-width='2'
       stroke-linecap='round'
       stroke-linejoin='round'

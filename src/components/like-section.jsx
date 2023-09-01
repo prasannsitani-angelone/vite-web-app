@@ -1,11 +1,23 @@
 import React from "react"
-import { CommentIcon, HeartIcon, MenuIcon, ShareIcon } from "../assets"
+import {
+  CommentIcon,
+  HeartIcon,
+  MenuIcon,
+  ShareIcon,
+  SolidHeartIcon
+} from "../assets"
+import { createSignal } from "solid-js"
 
 const LikeSection = (props) => {
+  const [like, setLike] = createSignal(false)
+
   return (
     <div className='flex flex-col items-center gap-3 '>
-      <div className='flex flex-col items-center w-12 gap-2'>
-        <HeartIcon />
+      <div
+        className='flex flex-col items-center w-12 gap-2'
+        onClick={() => setLike((prev) => !prev)}
+      >
+        {<HeartIcon isSelected={like()} />}
         <text className='text-xs text-white font-semibold'>23.7K</text>
       </div>
       <div className='flex flex-col items-center w-12 gap-2'>
