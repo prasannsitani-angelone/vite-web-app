@@ -11,7 +11,7 @@ function App() {
       <div className='drawer'>
         <input id='app-drawer' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content'>
-          <NavBar />
+          {/* <NavBar /> */}
           <Routes>
             <Route path='/' component={MainApp} />
           </Routes>

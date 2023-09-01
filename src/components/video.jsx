@@ -1,6 +1,6 @@
 const Video = (props) => {
   return (
-    <div className='flex bg-red-100 w-screen'>
+    <div className='flex bg-gray-100 w-screen'>
       <video autoPlay muted>
         <source
           src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'

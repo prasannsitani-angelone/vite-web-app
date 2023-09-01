@@ -4,6 +4,7 @@ import BottomTab from "./bottom-tab"
 import Cart from "./cart"
 import Product from "./product"
 import Reels from "./reels"
+import { NavBar } from "../components"
 
 const MainApp = (props) => {
   const [currentTab, setCurrentTab] = createSignal(0)
@@ -42,6 +43,7 @@ const MainApp = (props) => {
 
   return (
     <>
+      {/* <NavBar /> */}
       {renderScreen(tabs[currentTab()].id)}
       <BottomTab
         tabs={tabs}
