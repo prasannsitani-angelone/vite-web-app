@@ -2,8 +2,8 @@ import { GiftIcon } from "../../assets"
 
 const ProfileSection = (props) => {
   return (
-    <div className='flex flex-col gap-3 px-2 justify-end'>
-      <div className='flex bg-gray-800 w-fit py-1 px-2 items-center gap-1 rounded-full'>
+    <div className='flex flex-col px-2 justify-end'>
+      <div className='flex bg-gray-800 w-fit py-1 px-2 mb-3 items-center gap-1 rounded-full'>
         <GiftIcon />
         <text className='text-xs'>Send gift</text>
       </div>
