@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  CommentIcon,
-  HeartIcon,
-  MenuIcon,
-  ShareIcon,
-  SolidHeartIcon
-} from "../assets"
+import { CommentIcon, HeartIcon, MenuIcon, ShareIcon } from "../assets"
 import { createSignal } from "solid-js"
 
 const LikeSection = (props) => {
