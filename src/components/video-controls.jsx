@@ -1,5 +1,6 @@
 import { CameraIcon } from "../assets"
 import LikeSection from "./like-section"
+import ProfileSection from "./sections/profile-section"
 
 const VideoControls = (props) => {
   return (
@@ -10,7 +11,7 @@ const VideoControls = (props) => {
           <CameraIcon style={{ height: 24, width: 24 }} />
         </div>
         <div className='flex flex-row justify-between p-1'>
-          <text> Profile Section </text>
+          <ProfileSection />
           <LikeSection />
         </div>
       </div>
